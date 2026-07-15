@@ -1,18 +1,17 @@
 #include <Arduino.h>
+#include <WiFi.h>
 
-// put function declarations here:
-int myFunction(int, int);
+void setup()
+{
+    Serial.begin(115200);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+    WiFi.mode(WIFI_STA);
+
+    Serial.println();
+    Serial.print("ESP32 STA MAC Address: ");
+    Serial.println(WiFi.macAddress());
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+void loop()
+{
 }
